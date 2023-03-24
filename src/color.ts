@@ -99,6 +99,10 @@ class Color {
     return `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`
   }
 
+  get hsla() {
+    return `hsla(${this.hue}, ${this.saturation}%, ${this.lightness}%, ${this.alpha})`
+  }
+
   get shades() {
     return {
       50: this.lighten(63).hex,
