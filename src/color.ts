@@ -74,6 +74,7 @@ class Color {
     else hue = (red - green) / delta + 4
 
     hue = Math.round(hue * 60)
+    if (hue < 0) hue += 360
     return hue
   }
 
