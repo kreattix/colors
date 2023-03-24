@@ -1,5 +1,1 @@
-const ExampleFunction = () => {
-  return 'Example'
-}
-
-export default ExampleFunction
+export { default as Color } from './color'
