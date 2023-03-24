@@ -2,7 +2,7 @@ import { Color } from '.'
 
 class Colors {
   static get red() {
-    return Color('#F44336').shades
+    return Color('#f32d1f').shades
   }
   static get pink() {
     return Color('#E91E63').shades
@@ -20,13 +20,13 @@ class Colors {
     return Color('#2196F3').shades
   }
   static get lightBlue() {
-    return Color('#03A9F4').shades
+    return Color('#1eb6fd').shades
   }
   static get cyan() {
-    return Color('#00BCD4').shades
+    return Color('#08e2ff').shades
   }
   static get teal() {
-    return Color('#009688').shades
+    return Color('#2ba59c').shades
   }
   static get green() {
     return Color('#4CAF50').shades
@@ -38,7 +38,7 @@ class Colors {
     return Color('#CDDC39').shades
   }
   static get yellow() {
-    return Color('#FFEB3B').shades
+    return Color('#ffe922').shades
   }
   static get amber() {
     return Color('#FFC107').shades
@@ -50,13 +50,13 @@ class Colors {
     return Color('#FF5722').shades
   }
   static get brown() {
-    return Color('#795548').shades
+    return Color('#875f51').shades
   }
   static get gray() {
-    return Color('#9E9E9E').shades
+    return Color('#8b8b8b').shades
   }
   static get blueGray() {
-    return Color('#607D8B').shades
+    return Color('#6d8b9a').shades
   }
   static get white() {
     return '#ffffff'

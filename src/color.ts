@@ -101,16 +101,16 @@ class Color {
 
   get shades() {
     return {
-      50: this.lighten(48).hex,
-      100: this.lighten(40).hex,
-      200: this.lighten(32).hex,
-      300: this.lighten(16).hex,
-      400: this.lighten(8).hex,
+      50: this.lighten(63).hex,
+      100: this.lighten(56).hex,
+      200: this.lighten(42).hex,
+      300: this.lighten(28).hex,
+      400: this.lighten(14).hex,
       500: this.hex,
-      600: this.darken(8).hex,
-      700: this.darken(16).hex,
-      800: this.darken(32).hex,
-      900: this.darken(40).hex,
+      600: this.darken(14).hex,
+      700: this.darken(28).hex,
+      800: this.darken(42).hex,
+      900: this.darken(56).hex,
     }
   }
 
