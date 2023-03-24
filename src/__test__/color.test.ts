@@ -32,4 +32,8 @@ describe('check Color Class', () => {
     expect(color.darken(10).hexa).toBe('#7e6b6800')
     expect(color.lighten(10).hexa).toBe('#97858100')
   })
+  it('should return shades', () => {
+    const shades = Color('#f44336').shades
+    expect(shades[500]).toBe('#f44336')
+  })
 })

@@ -98,6 +98,21 @@ class Color {
     return `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`
   }
 
+  get shades() {
+    return {
+      50: this.lighten(48).hex,
+      100: this.lighten(40).hex,
+      200: this.lighten(32).hex,
+      300: this.lighten(16).hex,
+      400: this.lighten(8).hex,
+      500: this.hex,
+      600: this.darken(8).hex,
+      700: this.darken(16).hex,
+      800: this.darken(32).hex,
+      900: this.darken(40).hex,
+    }
+  }
+
   negate() {
     this.rgbNumber.red = 255 - this.rgbNumber.red
     this.rgbNumber.green = 255 - this.rgbNumber.green
