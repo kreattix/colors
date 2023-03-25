@@ -7,6 +7,7 @@ describe('check Color Class', () => {
     expect(color.rgb).toBe('rgb(51,51,51)')
     expect(color.rgba).toBe('rgba(51,51,51,1)')
     expect(color.hsl).toBe('hsl(0, 0%, 20%)')
+    expect(color.hsla).toBe('hsla(0, 0%, 20%, 1)')
     expect(color.lighten(10).hex).toBe('#383838')
     expect(color.darken(10).hexa).toBe('#2e2e2eff')
     expect(color.negate().hexa).toBe('#ccccccff')
