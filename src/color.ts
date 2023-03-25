@@ -5,7 +5,7 @@ class Color {
   rgbNumber: { [key in 'red' | 'green' | 'blue' | 'alpha']: number }
 
   constructor(color: string) {
-    this.color = color.replaceAll(' ', '')
+    this.color = color.replace(/\s/g, '')
     this.rgbNumber = getRGBAValue(this.color)
   }
 
