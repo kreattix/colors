@@ -67,12 +67,11 @@ const color = Color('hsla(120,30%,50%,0.7)') // using hsla value
 // to lighten the color
 const lightColor = color.lighten(10) // it accepts a number as amount of ratio to lighten the color
 
-// to lighten the color
+// to darken the color
 const darkColor = color.darken(20) // it accepts a number as amount of ratio to darken the color
 
-// to lighten the color
-const negatedColor = color.negate() // it accepts a number as amount of ratio to darken the color
-
+// to negate the color
+const negatedColor = color.negate()
 
 ...
 ...
