@@ -3,8 +3,10 @@ import { getRGBAValue } from './functions'
 class Color {
   color: string
   rgbNumber: { [key in 'red' | 'green' | 'blue' | 'alpha']: number }
+  threshold: number
 
   constructor(color: string) {
+    this.threshold = 128
     this.color = color.replace(/\s/g, '')
     this.rgbNumber = getRGBAValue(this.color)
   }
@@ -54,14 +56,12 @@ class Color {
     return `rgba(${this.red},${this.green},${this.blue},${this.alpha})`
   }
 
-  private get hueInfo() {
-    const red = this.red / 255
-    const green = this.green / 255
-    const blue = this.blue / 255
-    const minColor = Math.min(red, green, blue)
-    const maxColor = Math.max(red, green, blue)
-    const delta = maxColor - minColor
-    return { red, green, blue, minColor, maxColor, delta }
+  get hsl() {
+    return `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`
+  }
+
+  get hsla() {
+    return `hsla(${this.hue}, ${this.saturation}%, ${this.lightness}%, ${this.alpha})`
   }
 
   get hue() {
@@ -95,12 +95,13 @@ class Color {
     return +(saturation * 100).toFixed(1)
   }
 
-  get hsl() {
-    return `hsl(${this.hue}, ${this.saturation}%, ${this.lightness}%)`
+  get luminance() {
+    const { red, green, blue } = this.rgbNumber
+    return 0.299 * red + 0.587 * green + 0.114 * blue
   }
 
-  get hsla() {
-    return `hsla(${this.hue}, ${this.saturation}%, ${this.lightness}%, ${this.alpha})`
+  get contrast() {
+    return this.luminance > this.threshold ? new Color('#000').hex : new Color('#fff').hex
   }
 
   get shades() {
@@ -116,6 +117,20 @@ class Color {
       800: this.darken(42).hex,
       900: this.darken(56).hex,
     }
+  }
+
+  private get hueInfo() {
+    const red = this.red / 255
+    const green = this.green / 255
+    const blue = this.blue / 255
+    const minColor = Math.min(red, green, blue)
+    const maxColor = Math.max(red, green, blue)
+    const delta = maxColor - minColor
+    return { red, green, blue, minColor, maxColor, delta }
+  }
+
+  setThreshold(value = this.threshold) {
+    this.threshold = value
   }
 
   negate() {

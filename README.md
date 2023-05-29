@@ -73,6 +73,18 @@ const darkColor = color.darken(20) // it accepts a number as amount of ratio to 
 // to negate the color
 const negatedColor = color.negate()
 
+// to get the luminance of color
+const luminance = color.luminance
+
+// to get the contrast color
+const contrastColor = color.contrast
+
+// to ser the threshold for contrast color
+color.setThreshold(100) // default is 128
+
+// to get the threshold of contrast color
+const threshold = color.threshold
+
 ...
 ...
 

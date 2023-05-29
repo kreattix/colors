@@ -37,4 +37,34 @@ describe('check Color Class', () => {
     const shades = Color('#f44336').shades
     expect(shades[500]).toBe('#f44336')
   })
+
+  describe('get luminance()', () => {
+    it('should return correct luminance value for RGB color', () => {
+      const color = Color('#F5A623')
+      expect(color.luminance).toBe(174.687)
+    })
+  })
+
+  describe('get contrast()', () => {
+    it('should return black contrasting color for a light color', () => {
+      const color = Color('#FFFFFF')
+      expect(color.contrast).toBe('#000000')
+    })
+    it('should return white contrasting color for a dark color', () => {
+      const color = Color('#000000')
+      expect(color.contrast).toBe('#ffffff')
+    })
+  })
+
+  it('should set threshold to specified value', () => {
+    const color = Color('#F5A623')
+    color.setThreshold(100)
+    expect(color.threshold).toBe(100)
+  })
+
+  it('should set threshold to default value if no value is specified', () => {
+    const color = Color('#F5A623')
+    color.setThreshold()
+    expect(color.threshold).toBe(128)
+  })
 })
