@@ -1,62 +1,63 @@
 import { Color } from '.'
+import { COLORS } from './enum'
 
 class Colors {
   static get red() {
-    return Color('#f32d1f').shades
+    return Color(COLORS.red).shades
   }
   static get pink() {
-    return Color('#E91E63').shades
+    return Color(COLORS.pink).shades
   }
   static get purple() {
-    return Color('#9C27B0').shades
+    return Color(COLORS.purple).shades
   }
   static get violet() {
-    return Color('#673AB7').shades
+    return Color(COLORS.violet).shades
   }
   static get indigo() {
-    return Color('#3F51B5').shades
+    return Color(COLORS.indigo).shades
   }
   static get blue() {
-    return Color('#2196F3').shades
+    return Color(COLORS.blue).shades
   }
   static get lightBlue() {
-    return Color('#1eb6fd').shades
+    return Color(COLORS.lightBlue).shades
   }
   static get cyan() {
-    return Color('#08e2ff').shades
+    return Color(COLORS.cyan).shades
   }
   static get teal() {
-    return Color('#2ba59c').shades
+    return Color(COLORS.teal).shades
   }
   static get green() {
-    return Color('#4CAF50').shades
+    return Color(COLORS.green).shades
   }
   static get lightGreen() {
-    return Color('#8BC34A').shades
+    return Color(COLORS.lightGreen).shades
   }
   static get lime() {
-    return Color('#CDDC39').shades
+    return Color(COLORS.lime).shades
   }
   static get yellow() {
-    return Color('#ffe922').shades
+    return Color(COLORS.yellow).shades
   }
   static get amber() {
-    return Color('#FFC107').shades
+    return Color(COLORS.amber).shades
   }
   static get orange() {
-    return Color('#FF9800').shades
+    return Color(COLORS.orange).shades
   }
   static get deepOrange() {
-    return Color('#FF5722').shades
+    return Color(COLORS.deepOrange).shades
   }
   static get brown() {
-    return Color('#875f51').shades
+    return Color(COLORS.brown).shades
   }
   static get gray() {
-    return Color('#8b8b8b').shades
+    return Color(COLORS.gray).shades
   }
   static get blueGray() {
-    return Color('#6d8b9a').shades
+    return Color(COLORS.blueGray).shades
   }
   static get white() {
     return '#ffffff'

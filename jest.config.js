@@ -5,4 +5,5 @@ export default {
   collectCoverage: true,
   resetMocks: true,
   clearMocks: true,
+  coveragePathIgnorePatterns: ['node_modules', 'index.ts', 'vite-env.d.ts'],
 }

@@ -7,3 +7,25 @@ export enum MODELS {
   HUEA = 'HUEA',
   INVALID = 'INVALID COLOR',
 }
+
+export enum COLORS {
+  red = '#f32d1f',
+  pink = '#E91E63',
+  purple = '#9C27B0',
+  violet = '#673AB7',
+  indigo = '#3F51B5',
+  blue = '#2196F3',
+  lightBlue = '#1eb6fd',
+  cyan = '#08e2ff',
+  teal = '#2ba59c',
+  green = '#4CAF50',
+  lightGreen = '#8BC34A',
+  lime = '#CDDC39',
+  yellow = '#ffe922',
+  amber = '#FFC107',
+  orange = '#FF9800',
+  deepOrange = '#FF5722',
+  brown = '#875f51',
+  gray = '#8b8b8b',
+  blueGray = '#6d8b9a',
+}

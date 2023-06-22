@@ -119,6 +119,18 @@ class Color {
     }
   }
 
+  get pallete() {
+    const shades = this.shades
+    return {
+      main: shades[500],
+      hover: shades[400],
+      active: shades[600],
+      light: shades[100],
+      dark: shades[800],
+      contrast: this.contrast,
+    }
+  }
+
   private get hueInfo() {
     const red = this.red / 255
     const green = this.green / 255
