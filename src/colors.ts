@@ -11,6 +11,9 @@ class Colors {
   static get purple() {
     return Color(COLORS.purple).shades
   }
+  static get deepPurple() {
+    return Color(COLORS.deepPurple).shades
+  }
   static get violet() {
     return Color(COLORS.violet).shades
   }

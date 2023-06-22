@@ -11,6 +11,9 @@ class Pallete {
   static get purple() {
     return Color(COLORS.purple).pallete
   }
+  static get deepPurple() {
+    return Color(COLORS.deepPurple).pallete
+  }
   static get violet() {
     return Color(COLORS.violet).pallete
   }
