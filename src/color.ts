@@ -106,16 +106,16 @@ class Color {
 
   get shades() {
     return {
-      50: this.lighten(63).hex,
-      100: this.lighten(56).hex,
-      200: this.lighten(42).hex,
-      300: this.lighten(28).hex,
-      400: this.lighten(14).hex,
+      50: this.lighten(60).hex,
+      100: this.lighten(48).hex,
+      200: this.lighten(36).hex,
+      300: this.lighten(24).hex,
+      400: this.lighten(12).hex,
       500: this.hex,
-      600: this.darken(14).hex,
-      700: this.darken(28).hex,
-      800: this.darken(42).hex,
-      900: this.darken(56).hex,
+      600: this.darken(12).hex,
+      700: this.darken(24).hex,
+      800: this.darken(36).hex,
+      900: this.darken(48).hex,
     }
   }
 
@@ -153,7 +153,11 @@ class Color {
   }
 
   lighten(ratio: number) {
-    const newlightness = Math.max(0, Math.min(100, this.lightness + (this.lightness / 100) * ratio))
+    const newlightness = Math.min(
+      99,
+      Math.min(100, this.lightness + (this.lightness / 100) * ratio),
+    )
+
     return new Color(
       `hsla(${this.hue},${this.saturation}%,${newlightness.toFixed(2)}%,${
         this.alpha < 1 ? this.alpha.toFixed(2) : this.alpha
