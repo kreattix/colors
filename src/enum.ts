@@ -12,7 +12,7 @@ export enum COLORS {
   red = '#EF4444',
   pink = '#EC4899',
   purple = '#D946EF',
-  deepPurple = '#A855F7',
+  deepPurple = '#952ff5',
   violet = '#8B5CF6',
   indigo = '#6366F1',
   blue = '#3B82F6',
