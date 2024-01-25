@@ -6,7 +6,7 @@ class Color {
   threshold: number
 
   constructor(color: string) {
-    this.threshold = 128
+    this.threshold = 130
     this.color = color.replace(/\s/g, '')
     this.rgbNumber = getRGBAValue(this.color)
   }
@@ -143,6 +143,7 @@ class Color {
 
   setThreshold(value = this.threshold) {
     this.threshold = value
+    return this
   }
 
   negate() {
