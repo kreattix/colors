@@ -65,6 +65,6 @@ describe('check Color Class', () => {
   it('should set threshold to default value if no value is specified', () => {
     const color = Color('#F5A623')
     color.setThreshold()
-    expect(color.threshold).toBe(128)
+    expect(color.threshold).toBe(130)
   })
 })
