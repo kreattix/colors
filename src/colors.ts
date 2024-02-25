@@ -1,71 +1,71 @@
 import { Color } from '.'
 import { COLORS } from './enum'
 
-class Colors {
-  static get red() {
+const Colors = {
+  get red() {
     return Color(COLORS.red).shades
-  }
-  static get pink() {
+  },
+  get pink() {
     return Color(COLORS.pink).shades
-  }
-  static get purple() {
+  },
+  get purple() {
     return Color(COLORS.purple).shades
-  }
-  static get deepPurple() {
+  },
+  get deepPurple() {
     return Color(COLORS.deepPurple).shades
-  }
-  static get violet() {
+  },
+  get violet() {
     return Color(COLORS.violet).shades
-  }
-  static get indigo() {
+  },
+  get indigo() {
     return Color(COLORS.indigo).shades
-  }
-  static get blue() {
+  },
+  get blue() {
     return Color(COLORS.blue).shades
-  }
-  static get lightBlue() {
+  },
+  get lightBlue() {
     return Color(COLORS.lightBlue).shades
-  }
-  static get cyan() {
+  },
+  get cyan() {
     return Color(COLORS.cyan).shades
-  }
-  static get teal() {
+  },
+  get teal() {
     return Color(COLORS.teal).shades
-  }
-  static get green() {
+  },
+  get green() {
     return Color(COLORS.green).shades
-  }
-  static get lightGreen() {
+  },
+  get lightGreen() {
     return Color(COLORS.lightGreen).shades
-  }
-  static get lime() {
+  },
+  get lime() {
     return Color(COLORS.lime).shades
-  }
-  static get yellow() {
+  },
+  get yellow() {
     return Color(COLORS.yellow).shades
-  }
-  static get amber() {
+  },
+  get amber() {
     return Color(COLORS.amber).shades
-  }
-  static get orange() {
+  },
+  get orange() {
     return Color(COLORS.orange).shades
-  }
-  static get deepOrange() {
+  },
+  get deepOrange() {
     return Color(COLORS.deepOrange).shades
-  }
-  static get brown() {
+  },
+  get brown() {
     return Color(COLORS.brown).shades
-  }
-  static get gray() {
+  },
+  get gray() {
     return Color(COLORS.gray).shades
-  }
-  static get blueGray() {
+  },
+  get blueGray() {
     return Color(COLORS.blueGray).shades
-  }
-  static get white() {
+  },
+  get white() {
     return '#ffffff'
-  }
-  static get black() {
+  },
+  get black() {
     return {
       50: '#f7f7f7',
       100: '#eeeeee',
@@ -78,7 +78,7 @@ class Colors {
       800: '#373737',
       900: '#222222',
     }
-  }
+  },
 }
 
 export default Colors
