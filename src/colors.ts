@@ -14,9 +14,6 @@ const Colors = {
   get deepPurple() {
     return Color(COLORS.deepPurple).shades
   },
-  get violet() {
-    return Color(COLORS.violet).shades
-  },
   get indigo() {
     return Color(COLORS.indigo).shades
   },

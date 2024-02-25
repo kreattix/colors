@@ -105,17 +105,19 @@ class Color {
   }
 
   get shades() {
+    const distance = (95 - this.lightness) / 5
+    const negativeDistance = Math.min(distance, (this.lightness - 5) / 5)
     return {
-      50: this.lighten(60).hex,
-      100: this.lighten(48).hex,
-      200: this.lighten(36).hex,
-      300: this.lighten(24).hex,
-      400: this.lighten(12).hex,
+      50: this.setLightness(this.lightness + distance * 5).hex,
+      100: this.setLightness(this.lightness + distance * 4).hex,
+      200: this.setLightness(this.lightness + distance * 3).hex,
+      300: this.setLightness(this.lightness + distance * 2).hex,
+      400: this.setLightness(this.lightness + distance * 1).hex,
       500: this.hex,
-      600: this.darken(12).hex,
-      700: this.darken(24).hex,
-      800: this.darken(36).hex,
-      900: this.darken(48).hex,
+      600: this.setLightness(this.lightness - negativeDistance * 1).hex,
+      700: this.setLightness(this.lightness - negativeDistance * 2).hex,
+      800: this.setLightness(this.lightness - negativeDistance * 3).hex,
+      900: this.setLightness(this.lightness - negativeDistance * 4).hex,
     }
   }
 
@@ -151,6 +153,14 @@ class Color {
     this.rgbNumber.green = 255 - this.rgbNumber.green
     this.rgbNumber.blue = 255 - this.rgbNumber.blue
     return this
+  }
+
+  setLightness(amount: number) {
+    return new Color(
+      `hsla(${this.hue},${this.saturation}%,${Math.min(100, Math.max(0, amount)).toFixed(2)}%,${
+        this.alpha < 1 ? this.alpha.toFixed(2) : this.alpha
+      })`,
+    )
   }
 
   lighten(ratio: number) {

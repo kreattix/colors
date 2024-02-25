@@ -55,9 +55,6 @@ describe('Pallete', () => {
   it('should return teal color', () => {
     expect(Pallete.teal.main).toBeTruthy()
   })
-  it('should return violet color', () => {
-    expect(Pallete.violet.main).toBeTruthy()
-  })
   it('should return yellow color', () => {
     expect(Pallete.yellow.main).toBeTruthy()
   })

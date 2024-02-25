@@ -58,9 +58,6 @@ describe('check Colors Class', () => {
   it('should return teal color', () => {
     expect(Colors.teal[500]).toBeTruthy()
   })
-  it('should return violet color', () => {
-    expect(Colors.violet[500]).toBeTruthy()
-  })
   it('should return white color', () => {
     expect(Colors.white).toBeTruthy()
   })
