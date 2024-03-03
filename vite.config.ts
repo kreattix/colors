@@ -1,10 +1,9 @@
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import EsLint from 'vite-plugin-linter'
+import { EsLinter, linterPlugin } from 'vite-plugin-linter'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
-const { EsLinter, linterPlugin } = EsLint
 export default defineConfig((configEnv) => ({
   plugins: [
     tsConfigPaths(),
