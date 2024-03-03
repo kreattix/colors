@@ -15,13 +15,16 @@ body {
   transition: all 0.4s ease;
 }
 
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
 .shades-container {
   display: flex;
   justify-content: center;
   font-size: 12px;
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 24px;
 }
 
 .shade-items {
@@ -82,4 +85,72 @@ body {
   .shade-items {
     min-width: 100%;
   }
+}
+
+.w-color-colorful {
+  width: 100% !important;
+}
+.w-color-interactive.w-color-saturation {
+  height: initial !important;
+  aspect-ratio: 2/1;
+}
+
+.my-pallate-generator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.my-color-picker {
+  flex: 1;
+}
+
+.my-color-output {
+  border-radius: 8px;
+  flex: 1;
+  aspect-ratio: 2/1;
+}
+
+.my-palette-info {
+  margin-top: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-areas:
+    "code palette"
+    "shades shades";
+  grid-template-columns: 1fr 1fr;
+}
+
+.my-color-codes {
+  grid-area: code;
+  border: 1px solid #dedede;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.my-color-code {
+  width: 50%;
+  padding: 12px 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.my-color-code:not(:last-child) {
+  border-bottom-color: #dedede;
+}
+
+.my-color-code:hover {
+  z-index: 1;
+  transform: scale(1.07);
+  border-color: #dedede;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+.my-color-code:active {
+  transform: scale(0.95);
+  background: #dddddd;
 }
