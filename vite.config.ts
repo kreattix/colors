@@ -5,7 +5,6 @@ import EsLint from 'vite-plugin-linter'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
 const { EsLinter, linterPlugin } = EsLint
-
 export default defineConfig((configEnv) => ({
   plugins: [
     tsConfigPaths(),
