@@ -24,7 +24,7 @@ class Color {
   }
 
   get alpha() {
-    return this.rgbNumber.alpha
+    return Number(this.rgbNumber.alpha.toFixed(3))
   }
 
   get hex() {
@@ -158,7 +158,7 @@ class Color {
   setLightness(amount: number) {
     return new Color(
       `hsla(${this.hue},${this.saturation}%,${Math.min(100, Math.max(0, amount)).toFixed(2)}%,${
-        this.alpha < 1 ? this.alpha.toFixed(2) : this.alpha
+        this.alpha
       })`,
     )
   }
