@@ -114,8 +114,16 @@
     }),
     (s.u = function (e) {}),
     (s.miniCssF = function (e) {
-      return "static/css/701843a255e89ca9.css";
+      return "static/css/bc1581c69be2b95b.css";
     }),
+    (s.g = (function () {
+      if ("object" == typeof globalThis) return globalThis;
+      try {
+        return this || Function("return this")();
+      } catch (e) {
+        if ("object" == typeof window) return window;
+      }
+    })()),
     (s.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
@@ -194,7 +202,7 @@
     (s.tu = function (e) {
       return s.tt().createScriptURL(e);
     }),
-    (s.p = "/next/"),
+    (s.p = "./_next/"),
     (i = { 272: 0 }),
     (s.f.j = function (e, t) {
       var n = s.o(i, e) ? i[e] : void 0;

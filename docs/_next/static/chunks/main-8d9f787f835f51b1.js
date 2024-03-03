@@ -465,7 +465,7 @@
           (h = o.defaultLocale);
         let t = o.assetPrefix || "";
         if (
-          (self.__next_set_public_path__("" + t + "/next/"),
+          (self.__next_set_public_path__("" + t + "/_next/"),
           (0, O.setConfig)({
             serverRuntimeConfig: {},
             publicRuntimeConfig: o.runtimeConfig || {},
@@ -523,7 +523,7 @@
                             640, 750, 828, 1080, 1200, 1920, 2048, 3840,
                           ],
                           imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-                          path: "/next/image",
+                          path: "/_next/image",
                           loader: "default",
                           dangerouslyAllowSVG: !1,
                           unoptimized: !1,
@@ -965,7 +965,10 @@
               (0, c.removeTrailingSlash)((0, u.addLocale)(e, n)),
               ".json"
             );
-            return (0, o.addBasePath)("/next/data/" + this.buildId + t + p, !0);
+            return (0, o.addBasePath)(
+              "/_next/data/" + this.buildId + t + p,
+              !0
+            );
           })(
             e.skipInterpolation
               ? h
@@ -1399,7 +1402,7 @@
       function h(e, t) {
         return p().then((r) => {
           if (!(t in r)) throw l(Error("Failed to lookup route: " + t));
-          let o = r[t].map((t) => e + "/next/" + encodeURI(t));
+          let o = r[t].map((t) => e + "/_next/" + encodeURI(t));
           return {
             scripts: o
               .filter((e) => e.endsWith(".js"))
@@ -2923,7 +2926,7 @@
         n = {
           deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
           imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-          path: "/next/image",
+          path: "/_next/image",
           loader: "default",
           loaderFile: "",
           domains: [],
@@ -3743,7 +3746,7 @@
             }
           }
           H || V.events.emit("routeChangeStart", r, J);
-          let es = "/404" === this.pathname || "/_error" === this.pathname;
+          let es = "./404" === this.pathname || "/_error" === this.pathname;
           try {
             let a = await this.getRouteInfo({
               route: eo,
@@ -3835,9 +3838,9 @@
               ) {
                 let e;
                 try {
-                  await this.fetchComponent("/404"), (e = "/404");
+                  await this.fetchComponent("/404"), (e = "./404");
                 } catch (t) {
-                  e = "/_error";
+                  e = "./_error";
                 }
                 if (
                   ((a = await this.getRouteInfo({
@@ -4459,14 +4462,15 @@
           {
             let { BloomFilter: e } = r(9337),
               t = {
-                numItems: 3,
+                numItems: 4,
                 errorRate: 1e-4,
-                numBits: 58,
+                numBits: 77,
                 numHashes: 14,
                 bitArray: [
-                  1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0,
-                  0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0,
-                  1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1,
+                  1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1,
+                  1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0,
+                  0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1,
+                  0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1,
                 ],
               },
               n = {
@@ -4694,7 +4698,7 @@
             (t = (0, n.removeTrailingSlash)(t)),
           e.buildId &&
             (t = (0, a.addPathSuffix)(
-              (0, o.addPathPrefix)(t, "/next/data/" + e.buildId),
+              (0, o.addPathPrefix)(t, "/_next/data/" + e.buildId),
               "/" === e.pathname ? "index.json" : ".json"
             )),
           (t = (0, o.addPathPrefix)(t, e.basePath)),
@@ -4745,7 +4749,7 @@
         return (
           a && !a.endsWith(":") && (a += ":"),
           e.slashes || ((!a || o.test(a)) && !1 !== s)
-            ? ((s = "//" + (s || "")), i && "/" !== i[0] && (i = "/" + i))
+            ? ((s = ".//" + (s || "")), i && "/" !== i[0] && (i = "./" + i))
             : s || (s = ""),
           u && "#" !== u[0] && (u = "#" + u),
           c && "?" !== c[0] && (c = "?" + c),
@@ -4818,11 +4822,11 @@
           (c.basePath = u));
         let f = c.pathname;
         if (
-          c.pathname.startsWith("/next/data/") &&
+          c.pathname.startsWith("/_next/data/") &&
           c.pathname.endsWith(".json")
         ) {
           let e = c.pathname
-              .replace(/^\/next\/data\//, "")
+              .replace(/^\/_next\/data\//, "")
               .replace(/\.json$/, "")
               .split("/"),
             r = e[0];
@@ -5367,7 +5371,7 @@
           return this._smoosh();
         }
         _smoosh(e) {
-          void 0 === e && (e = "/");
+          void 0 === e && (e = "./");
           let t = [...this.children.keys()].sort();
           null !== this.slugName && t.splice(t.indexOf("[]"), 1),
             null !== this.restSlugName && t.splice(t.indexOf("[...]"), 1),
@@ -5385,7 +5389,7 @@
               ),
             !this.placeholder)
           ) {
-            let t = "/" === e ? "/" : e.slice(0, -1);
+            let t = "./" === e ? "/" : e.slice(0, -1);
             if (null != this.optionalRestSlugName)
               throw Error(
                 'You cannot define a route with the same specificity as a optional catch-all route ("' +
@@ -5841,7 +5845,7 @@
             Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
             Object.defineProperty(e, "__esModule", { value: !0 });
         }),
-        void 0 !== t && (t.ab = "//"),
+        void 0 !== t && (t.ab = ".//"),
         (r = {}),
         t.r(r),
         t.d(r, {
@@ -6402,7 +6406,7 @@
           );
         switch (((t = (0, n.normalizeAppPath)(t)), r)) {
           case "(.)":
-            a = "/" === t ? `/${a}` : t + "/" + a;
+            a = "./" === t ? `/${a}` : t + "/" + a;
             break;
           case "(..)":
             if ("/" === t)
@@ -6412,7 +6416,7 @@
             a = t.split("/").slice(0, -1).concat(a).join("/");
             break;
           case "(...)":
-            a = "/" + a;
+            a = "./" + a;
             break;
           case "(..)(..)":
             let i = t.split("/");
