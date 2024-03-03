@@ -1,10 +1,11 @@
 "use client";
-import { Colors } from "@kreattix/colors";
+import { Colors, Pallete } from "@kreattix/colors";
 import { FC, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 interface ColorShadeProps {
-  shades: typeof Colors.red;
+  shades?: typeof Colors.red;
+  palette?: typeof Pallete.red;
   colorCode: string;
   shadeCode: string;
   index: number;
@@ -15,9 +16,12 @@ const ColorShade: FC<ColorShadeProps> = ({
   colorCode,
   index,
   shades,
+  palette,
 }) => {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
-  const shadesArray = Object.values(shades);
+  const shadesArray = shades
+    ? Object.values(shades)
+    : Object.values(palette || []);
   const nextIndex = index + 5;
   const textColorIndex =
     nextIndex > shadesArray.length - 1
@@ -39,9 +43,13 @@ const ColorShade: FC<ColorShadeProps> = ({
         key={`${shadeCode}-${colorCode}`}
         style={{
           background: colorCode,
-          color: shadesArray[textColorIndex],
+          color: shades
+            ? shadesArray[textColorIndex]
+            : shadeCode === "contrast"
+            ? palette?.main
+            : palette?.contrast,
         }}
-        className="shade-item"
+        className={`shade-item ${shadeCode}`}
       >
         {copiedColor ?? (
           <>

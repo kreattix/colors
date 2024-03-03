@@ -152,5 +152,54 @@ body {
 
 .my-color-code:active {
   transform: scale(0.95);
-  background: #dddddd;
+  background: #dedede;
+}
+
+.my-palette-colors {
+  grid-area: palette;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+}
+
+.my-palette-colors .shade-item {
+  min-width: 33.33%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 500;
+  aspect-ratio: initial !important;
+}
+
+.my-palette-colors .shade-item > div:first-child {
+  text-transform: capitalize;
+}
+
+.my-palette-colors .shade-item.light {
+  color: black !important;
+}
+
+.my-palette-colors .shade-item:hover {
+  z-index: 1;
+  transform: scale(1.07);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.my-palette-colors .shade-item:active {
+  transform: scale(0.9);
+}
+
+.my-shade-colors {
+  grid-area: shades;
+  display: flex;
+}
+
+li a.active {
+  color: #0c80de !important;
 }

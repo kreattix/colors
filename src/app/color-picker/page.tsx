@@ -1,5 +1,6 @@
 "use client";
 import ColorPicker from "@/components/color-picker/color-picker";
+import ColorShade from "@/components/color-shade/ColorShade";
 import { useAppSelector } from "@/redux/features/hooks";
 import { Color } from "@kreattix/colors";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -37,6 +38,32 @@ const ColorPickerPage = () => {
                   {item.name}: {item.code}
                 </div>
               </CopyToClipboard>
+            );
+          })}
+        </div>
+        <div className="my-palette-colors">
+          {Object.entries(color.pallete).map(([key, value], index) => {
+            return (
+              <ColorShade
+                key={key}
+                colorCode={value}
+                shadeCode={key}
+                palette={color.pallete}
+                index={index}
+              />
+            );
+          })}
+        </div>
+        <div className="my-shade-colors">
+          {Object.entries(color.shades).map(([key, value], index) => {
+            return (
+              <ColorShade
+                key={key}
+                colorCode={value}
+                shadeCode={key}
+                shades={color.shades}
+                index={index}
+              />
             );
           })}
         </div>
