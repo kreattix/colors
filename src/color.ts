@@ -121,7 +121,7 @@ class Color {
     }
   }
 
-  get pallete() {
+  get palette() {
     const shades = this.shades
     return {
       main: shades[500],
