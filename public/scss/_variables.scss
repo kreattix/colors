@@ -1,0 +1,200 @@
+$red: #f44336 !default;
+$pink: #e91e63 !default;
+$purple: #9c27b0 !default;
+$deepPurple: #673ab7 !default;
+$indigo: #3f51b5 !default;
+$blue: #2196f3 !default;
+$lightBlue: #03a9f4 !default;
+$cyan: #00bcd4 !default;
+$teal: #009688 !default;
+$green: #4caf50 !default;
+$lightGreen: #8bc34a !default;
+$lime: #cddc39 !default;
+$yellow: #ffe927 !default;
+$amber: #ffc107 !default;
+$orange: #ff9800 !default;
+$deepOrange: #ff5722 !default;
+$brown: #795548 !default;
+$gray: #888888 !default;
+$blueGray: #607d8b !default;
+$white: #ffffff !default;
+$black: #000000 !default;
+
+$colors: (
+  red: $red,
+  pink: $pink,
+  purple: $purple,
+  deepPurple: $deepPurple,
+  indigo: $indigo,
+  blue: $blue,
+  lightBlue: $lightBlue,
+  cyan: $cyan,
+  teal: $teal,
+  green: $green,
+  lightGreen: $lightGreen,
+  lime: $lime,
+  yellow: $yellow,
+  amber: $amber,
+  orange: $orange,
+  deepOrange: $deepOrange,
+  brown: $brown,
+  gray: $gray,
+  blueGray: $blueGray,
+  white: $white,
+  black: $black
+) !default;
+
+$redShades: shades($red) !default;
+$pinkShades: shades($pink) !default;
+$purpleShades: shades($purple) !default;
+$deepPurpleShades: shades($deepPurple) !default;
+$indigoShades: shades($indigo) !default;
+$blueShades: shades($blue) !default;
+$lightBlueShades: shades($lightBlue) !default;
+$cyanShades: shades($cyan) !default;
+$tealShades: shades($teal) !default;
+$greenShades: shades($green) !default;
+$limeShades: shades($lime) !default;
+$yellowShades: shades($yellow) !default;
+$amberShades: shades($amber) !default;
+$orangeShades: shades($orange) !default;
+$deepOrangeShades: shades($deepOrange) !default;
+$brownShades: shades($brown) !default;
+$grayShades: shades($gray) !default;
+$blueGrayShades: shades($blueGray) !default;
+$blackShades: (
+  50: #f7f7f7,
+  100: #eeeeee,
+  200: #c7c7c7,
+  300: #bbbbbb,
+  400: #979797,
+  500: #888888,
+  600: #676767,
+  700: #555555,
+  800: #373737,
+  900: #222222
+) !default;
+
+$redPalette: palette($red) !default;
+$pinkPalette: palette($pink) !default;
+$purplePalette: palette($purple) !default;
+$deepPurplePalette: palette($deepPurple) !default;
+$indigoPalette: palette($indigo) !default;
+$bluePalette: palette($blue) !default;
+$lightBluePalette: palette($lightBlue) !default;
+$cyanPalette: palette($cyan) !default;
+$tealPalette: palette($teal) !default;
+$greenPalette: palette($green) !default;
+$limePalette: palette($lime) !default;
+$yellowPalette: palette($yellow) !default;
+$amberPalette: palette($amber) !default;
+$orangePalette: palette($orange) !default;
+$deepOrangePalette: palette($deepOrange) !default;
+$brownPalette: palette($brown) !default;
+$grayPalette: palette($gray) !default;
+$blueGrayPalette: palette($blueGray) !default;
+$blackPalette: paletteFromShades($blackShades) !default;
+
+$colorShades: (
+  red: $redShades,
+  pink: $pinkShades,
+  purple: $purpleShades,
+  deepPurple: $deepPurpleShades,
+  indigo: $indigoShades,
+  blue: $blueShades,
+  lightBlue: $lightBlueShades,
+  cyan: $cyanShades,
+  teal: $tealShades,
+  green: $greenShades,
+  lime: $limeShades,
+  yellow: $yellowShades,
+  amber: $amberShades,
+  orange: $orangeShades,
+  deepOrange: $deepOrangeShades,
+  brown: $brownShades,
+  gray: $grayShades,
+  blueGray: $blueGrayShades,
+  black: $blackShades
+) !default;
+
+$colorPalettes: (
+  red: $redPalette,
+  pink: $pinkPalette,
+  purple: $purplePalette,
+  deepPurple: $deepPurplePalette,
+  indigo: $indigoPalette,
+  blue: $bluePalette,
+  lightBlue: $lightBluePalette,
+  cyan: $cyanPalette,
+  teal: $tealPalette,
+  green: $greenPalette,
+  lime: $limePalette,
+  yellow: $yellowPalette,
+  amber: $amberPalette,
+  orange: $orangePalette,
+  deepOrange: $deepOrangePalette,
+  brown: $brownPalette,
+  gray: $grayPalette,
+  blueGray: $blueGrayPalette,
+  black: $blackPalette
+) !default;
+
+$primary: $blue !default;
+$secondary: $blueGray !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $amber !default;
+$error: $red !default;
+$light: map-get($blackShades, 200) !default;
+$dark: map-get($blackShades, 800) !default;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  error: $error,
+  light: $light,
+  dark: $dark
+) !default;
+
+$primaryShades: shades($primary) !default;
+$secondaryShades: shades($secondary) !default;
+$successShades: shades($success) !default;
+$infoShades: shades($info) !default;
+$warningShades: shades($warning) !default;
+$errorShades: shades($error) !default;
+$lightShades: shades($light) !default;
+$darkShades: shades($dark) !default;
+
+$primaryPalette: palette($primary) !default;
+$secondaryPalette: palette($secondary) !default;
+$successPalette: palette($success) !default;
+$infoPalette: palette($info) !default;
+$warningPalette: palette($warning) !default;
+$errorPalette: palette($error) !default;
+$lightPalette: palette($light) !default;
+$darkPalette: palette($dark) !default;
+
+$themeShades: (
+  primary: $primaryShades,
+  secondary: $secondaryShades,
+  success: $successShades,
+  info: $infoShades,
+  warning: $warningShades,
+  error: $errorShades,
+  light: $lightShades,
+  dark: $darkShades
+) !default;
+
+$themePalettes: (
+  primary: $primaryPalette,
+  secondary: $secondaryPalette,
+  success: $successPalette,
+  info: $infoPalette,
+  warning: $warningPalette,
+  error: $errorPalette,
+  light: $lightPalette,
+  dark: $darkPalette
+) !default;

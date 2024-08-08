@@ -1,0 +1,13 @@
+.DS_Store
+.nx
+dist
+build
+coverage
+.vscode
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+**/*.d.ts

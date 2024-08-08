@@ -1,0 +1,48 @@
+:root {
+  @each $name, $color in $colors {
+    --#{$app-prefix}-#{$name}: #{$color};
+  }
+  @each $paletteName, $palette in $themePalettes {
+    @each $name, $color in $palette {
+      --#{$app-prefix}-#{$paletteName}-#{$name}: #{$color};
+    }
+  }
+}
+
+@each $name, $color in map-merge($colors, $theme-colors) {
+  $palette: palette($color);
+  .#{$app-prefix}-text-#{$name} {
+    color: $color;
+  }
+  .#{$app-prefix}-text-hover-#{$name} {
+    color: map-get($palette, hover);
+  }
+  .#{$app-prefix}-contrast-#{$name},
+  .#{$app-prefix}-contrast-hover-#{$name} {
+    color: map-get($palette, contrast);
+  }
+  .#{$app-prefix}-bg-#{$name} {
+    background-color: $color;
+  }
+  .#{$app-prefix}-bg-hover-#{$name} {
+    background-color: map-get($palette, hover);
+  }
+  .#{$app-prefix}-border-#{$name} {
+    border-color: $color;
+  }
+  .#{$app-prefix}-border-hover-#{$name} {
+    border-color: map-get($palette, hover);
+  }
+  .#{$app-prefix}-fill-#{$name} {
+    fill: $color;
+  }
+  .#{$app-prefix}-fill-hover-#{$name} {
+    fill: map-get($palette, hover);
+  }
+  .#{$app-prefix}-stroke-#{$name} {
+    stroke: $color;
+  }
+  .#{$app-prefix}-stroke-hover-#{$name} {
+    stroke: map-get($palette, hover);
+  }
+}

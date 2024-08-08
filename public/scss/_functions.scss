@@ -1,0 +1,56 @@
+@function tint($color, $weight) {
+  @return mix(#ffffff, $color, $weight);
+}
+
+@function shade($color, $weight) {
+  @return mix(#000000, $color, $weight);
+}
+
+@function shades($color) {
+  $diff: 18;
+  $shades: (
+    50: tint($color, $diff * 5),
+    100: tint($color, $diff * 4),
+    200: tint($color, $diff * 3),
+    300: tint($color, $diff * 2),
+    400: tint($color, $diff * 1),
+    500: $color,
+    600: shade($color, $diff * 1),
+    700: shade($color, $diff * 2),
+    800: shade($color, $diff * 3),
+    900: shade($color, $diff * 4)
+  );
+  @return $shades;
+}
+
+@function palette($color) {
+  $shades: shades($color);
+  @return paletteFromShades($shades);
+}
+
+@function paletteFromShades($shades) {
+  @debug $shades;
+  @return (
+    main: map-get($shades, 500),
+    hover: map-get($shades, 400),
+    active: map-get($shades, 600),
+    light: map-get($shades, 100),
+    dark: map-get($shades, 800),
+    contrast: contrast(map-get($shades, 500))
+  );
+}
+
+@function luminance($color) {
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  @return 0.299 * $red + 0.587 * $green + 0.114 * $blue;
+}
+
+@function contrast($color) {
+  @if luminance($color) > $threshold {
+    @return $contrastForLightColor;
+  } @else {
+    @return $contrastForDarkColor;
+  }
+}
